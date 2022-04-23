@@ -5,12 +5,15 @@ import Cat from './components/Cat';
 import Button from 'react-bootstrap/button';
 
 function App() {
+  //external api to get cats
   const CAT_API = 'https://api.thecatapi.com/v1/breeds';
 
+  //state variables
   const [cats, setCats] = useState([]);
   const [searchString, setSearchString] = useState('');
   const [sortedBy, setSortedBy] = useState('');
 
+  //function to search for cat name/origin
   const searchCat = (cat) => {
     const name = cat.name.toLowerCase();
     const origin = cat.origin.toLowerCase();
@@ -43,6 +46,7 @@ function App() {
     return 0;
   };
 
+  //fetching cats from external api
   React.useEffect(() => {
     axios
       .get(CAT_API)
@@ -54,7 +58,7 @@ function App() {
           setCats(res.data.sort(compareByName));
         }
       })
-      .catch((err) => console.log('Error while fetching users:' + err));
+      .catch((err) => console.log('Error while fetching cats:' + err));
   }, [sortedBy]);
 
   return (

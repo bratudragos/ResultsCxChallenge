@@ -1,12 +1,11 @@
 import Card from "react-bootstrap/Card";
-import Image from 'react-bootstrap/Image'
 import flattenJSON from "../utilities/flatten";
 
 function Cat({props}) {
   const flattenedProps = flattenJSON(props);
-  //console.log(flattenedProps);
+
   const openNewPage = (newPageUrl) => {
-   window.open(newPageUrl, "_blank") //to open new page
+   window.open(newPageUrl, "_blank")
 }
 
   return (
