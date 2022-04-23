@@ -32,6 +32,7 @@ to get a cat by id, GET http://localhost:5000/cats/catId
 
 to add a new cat, POST http://localhost:5000/cats 
 example body for add: 
+
 {
     "name": "testName",
     "id": "testid",
