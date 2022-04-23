@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# Results Cx Challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Frontend
 
-## Available Scripts
+Start the front-end by running 'npm start' in the 'src' folder.
 
-In the project directory, you can run:
+Structured in 2 components : main App component and the Cat component for every individual cat
 
-### `npm start`
+On running and entering the app, the cats from the external api are shown and you can search by name and breed and order them by name or origin.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Used CSS and react-bootstrap for styling
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+useState and useEffect hooks used to handle state and changes.
 
-### `npm test`
+### Backend
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Start the backend by running 'npm run server' in the 'cat-app' folder.
 
-### `npm run build`
+Express + node + JsonDB
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Structured in server, router, controller. No need for a Cat model at this level.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Controller - implemented here are the CRD operations working on the JsonDB.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Router - routing the controller functions to api's.
 
-### `npm run eject`
+to get all cats, GET http://localhost:5000/cats
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+to get a cat by name, GET http://localhost:5000/cats?name=yourCatNameToSearch
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+to get a cat by id, GET http://localhost:5000/cats/catId
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+to add a new cat, POST http://localhost:5000/cats 
+example body for add: 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+{
+    "name": "testName",
+    "id": "testid",
+    "breed": "testBreed",
+    "weight": "testWeight"
+}
 
-## Learn More
+to delete a cat, DELETE http://localhost:5000/cats/catId
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+to sort the cats by name, GET http://localhost:5000/cats/sortCats
