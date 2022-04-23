@@ -2,6 +2,8 @@
 
 ### Frontend
 
+Start the front-end by running 'npm start' in the 'src' folder.
+
 Structured in 2 components : main App component and the Cat component for every individual cat
 
 On running and entering the app, the cats from the external api are shown and you can search by name and breed and order them by name or origin.
@@ -11,6 +13,9 @@ Used CSS and react-bootstrap for styling
 useState and useEffect hooks used to handle state and changes.
 
 ### Backend
+
+Start the backend by running 'npm run server' in the 'cat-app' folder.
+
 Express + node + JsonDB
 
 Structured in server, router, controller.
