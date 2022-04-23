@@ -1,6 +1,6 @@
 # Results Cx Challenge
 
-###Frontend
+### Frontend
 
 Structured in 2 components : main App component and the Cat component for every individual cat
 
@@ -10,7 +10,7 @@ Used CSS and react-bootstrap for styling
 
 useState and useEffect hooks used to handle state and changes.
 
-###Backend
+### Backend
 Express + node + JsonDB
 
 Structured in server, router, controller.
