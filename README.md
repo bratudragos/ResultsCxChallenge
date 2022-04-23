@@ -18,7 +18,7 @@ Start the backend by running 'npm run server' in the 'cat-app' folder.
 
 Express + node + JsonDB
 
-Structured in server, router, controller.
+Structured in server, router, controller. No need for a Cat model at this level.
 
 Controller - implemented here are the CRD operations working on the JsonDB.
 
