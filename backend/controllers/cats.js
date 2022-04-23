@@ -1,4 +1,4 @@
-import axios from "axios";
+const axios = require("axios");
 
 exports.createCat = (req, res, next) => {
   const url = req.protocol + "://" + req.get("host");
@@ -29,7 +29,7 @@ exports.getCats = (req, res) => {
       if (!req.params) {
         if (!req.params.name) {
           data.forEach((cat) => {
-            if (cat.name === req.params.name) {
+            if (cat.name.toLowerCase() === req.params.name.toLowerCase()) {
               data = cat;
             }
           });
